@@ -1,10 +1,10 @@
 import { Filters } from "./Filters.jsx"
 
-export const Header = () => {
+export const Header = ({ changeFilters }) => {
   return(
     <header>
       <h1>Shopping Cart</h1>
-      <Filters />
+      <Filters onChange={changeFilters}/>
     </header>
   )
 }
