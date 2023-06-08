@@ -6,7 +6,7 @@ import { products as initialProducts } from "./mocks/products.json"
 function App() {
   const [products] = useState(initialProducts)
   const [filters, setFilters] = useState({
-    category: 'laptops',
+    category: 'all',
     minPrice: 0
   })
 
