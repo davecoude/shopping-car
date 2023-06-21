@@ -1,30 +1,46 @@
-import { AddToCartIcon } from "./Icons.jsx";
+import { AddToCartIcon, RemoveFromCartIcon } from "./Icons.jsx";
 import "./Products.css"
+import { useCart } from "../hooks/useCar.js";
 
-export function Products ({ products }) {
+export function Products({ products }) {
+  const { cart, addToCart, removeFromCart } = useCart()
 
-    return(
-        <main className="products">
-            <ul>
-                {products.map(product => (
-                    <li key={product.id}>
-                        <img
-                            src={product.thumbnail}
-                            alt={product.title}
-                        />
-                    <div>
-                        <strong>{product.title}</strong> - ${product.price}
-                    </div>
+  const checkProductInCart = product => {
+    return cart.some(item => item.id === product.id)
+  }
 
-                    <div>
-                        <button>
-                            <AddToCartIcon />
-                        </button>
-                    </div>
-                    </li>
+  return (
+    <main className="products">
+      <ul>
+        {products.map(product => {
+          const isProductInCart = checkProductInCart(product)
 
-                ))}
-            </ul>
-        </main>
-    )
+          return (
+            <li key={product.id}>
+              <img
+                src={product.thumbnail}
+                alt={product.title}
+              />
+              <div>
+                <strong>{product.title}</strong> - ${product.price}
+              </div>
+
+              <div>
+                <button style={{ backgroundColor: isProductInCart ? '#ef4444' : '#09f'}} onClick={() => isProductInCart
+                  ? removeFromCart(product)
+                  : addToCart(product)
+                }>
+                  {
+                    isProductInCart
+                      ? <RemoveFromCartIcon />
+                      : <AddToCartIcon />
+                  }
+                </button>
+              </div>
+            </li>
+          )
+        })}
+      </ul>
+    </main>
+  )
 }
