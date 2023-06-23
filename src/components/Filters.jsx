@@ -44,8 +44,6 @@ export const Filters = () => {
           <option value="all">Todas</option>
           <option value="smartphones">Celulares</option>
           <option value="laptops">Portatiles</option>
-          <option value="LED Lights">Luces</option>
-          <option value="fragrances">Fragancias</option>
         </select>
       </div>
     </section>
