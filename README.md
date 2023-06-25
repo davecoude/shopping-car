@@ -1,6 +1,6 @@
 <h1>shopping-car 🛒</h1>
 <img src="./src/assets/shopingcart.gif">
-<p>Un carrito de compras con filtros de precios y categorías. Es una aplicación web que permite a los usuarios seleccionar y modificar productos de una tienda virtual.</p>
+<p>Un carrito de compras con filtros de precios y categorías. Es una aplicación web que permite a los usuarios seleccionar y modificar productos de una tienda virtual. <a href="https://davecoude.github.io/shopping-car/"><strong> Demo 🔗</strong></a></p>
 
 <h2>🚀 Comenzando </h2>
 <p>Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo.</p>
